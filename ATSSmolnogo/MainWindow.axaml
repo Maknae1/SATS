@@ -1,0 +1,120 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="ATSSmolnogo.MainWindow"
+		FontFamily="Comic Sans Ms"
+		Icon=".\sources\icon.png"
+        Title="ATSSmolnogo">
+	<Window.Styles>
+		<Style Selector="Button">
+			<Setter Property="Background" Value="#204F7B"/>
+		</Style>
+	</Window.Styles>
+	<Grid RowDefinitions="*,3*,3*"
+		  ColumnDefinitions="*,*,*"
+		  Margin="10">
+		<Image Source=".\sources\logo.png"/>
+		<TextBlock Text="Тестовое задание (Работа со списком сотрудников)"
+				   Grid.ColumnSpan="2"
+				   Grid.Column="1"
+				   HorizontalAlignment="Left"
+				   VerticalAlignment="Center"
+				   FontSize="20"
+				   FontWeight="DemiBold"/>
+		<StackPanel Grid.ColumnSpan="3"
+					Grid.RowSpan="2"
+					Grid.Row="1"
+					Spacing="10"
+					Margin="10">
+			<StackPanel Orientation="Horizontal"
+						Spacing="10">
+				<ComboBox x:Name="sortComboBox"
+						  SelectedIndex="1">
+					<ComboBoxItem Content="По убыванию должности"/>
+					<ComboBoxItem Content="По возрастанию должности"/>
+				</ComboBox>
+				<ComboBox x:Name="filtrationComboBox"
+						  SelectedIndex="1">
+					<ComboBoxItem Content="Случайный пользователь"/>
+					<ComboBoxItem Content="Список случайных сотрудников"/>
+				</ComboBox>
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal"
+						Spacing="10"
+						HorizontalAlignment="Stretch">
+
+				<StackPanel Spacing="10">
+					<TextBlock Text="Список сотрудников:"
+							   HorizontalAlignment="Center"/>
+					<Border BorderBrush="Black"
+							BorderThickness="2">
+						<ScrollViewer Height="300">
+							<ListBox x:Name="usersListBox"
+									 Background="Transparent"
+								 Height="300">
+								<ListBox.ItemTemplate>
+									<DataTemplate>
+										<StackPanel Orientation="Horizontal">
+											<StackPanel Width="230">
+												<TextBlock Text="{Binding Fullname}"
+														   TextWrapping="Wrap"
+														   FontWeight="DemiBold"/>
+												<TextBlock Text="{Binding Position}"
+														   TextWrapping="Wrap"/>
+												<TextBlock Text="{Binding Login}"
+														   TextWrapping="Wrap"/>
+											</StackPanel>
+											<Button Content="Цепочка руководителей"
+													Tag="{Binding Id}"
+													Click="ChainOfSupervisorsButtonClick"/>
+										</StackPanel>
+									</DataTemplate>
+								</ListBox.ItemTemplate>
+							</ListBox>
+						</ScrollViewer>
+					</Border>
+					
+					
+				</StackPanel>
+
+				<Separator Width="100"/>
+				<StackPanel Spacing="10"
+							Width="550">
+					<TextBlock Text="Цепочка руководителей:"
+							   HorizontalAlignment="Center"/>
+					<Border BorderBrush="Black"
+							BorderThickness="2">
+						<StackPanel Height="300"
+									Spacing="10">
+							<ListBox x:Name="chainOfSupervisorsListBox"
+									 Height="300"
+									 Background="Transparent">
+								<ListBox.ItemTemplate>
+									<DataTemplate>
+										<StackPanel Orientation="Horizontal"
+													Spacing="10"
+													Width="550">
+											<TextBlock Text="{Binding Fullname}"
+													   TextWrapping="Wrap"
+													   Margin="10,0,0,0"/>
+											<TextBlock Text="{Binding Position}"
+													   Width="250"
+													   TextWrapping="Wrap"/>
+										</StackPanel>
+									</DataTemplate>
+								</ListBox.ItemTemplate>
+							</ListBox>
+							<TextBlock x:Name="deputyDirectorTextBlock"
+									   FontWeight="DemiBold"
+									   TextWrapping="Wrap"/>
+						</StackPanel>
+					</Border>
+				</StackPanel>
+			</StackPanel>
+		</StackPanel>
+	</Grid>
+</Window>
+

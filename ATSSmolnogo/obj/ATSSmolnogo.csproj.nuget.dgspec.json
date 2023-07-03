@@ -1,0 +1,81 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\source\\repos\\ATSSmolnogo\\ATSSmolnogo\\ATSSmolnogo.csproj": {}
+  },
+  "projects": {
+    "D:\\source\\repos\\ATSSmolnogo\\ATSSmolnogo\\ATSSmolnogo.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\source\\repos\\ATSSmolnogo\\ATSSmolnogo\\ATSSmolnogo.csproj",
+        "projectName": "ATSSmolnogo",
+        "projectPath": "D:\\source\\repos\\ATSSmolnogo\\ATSSmolnogo\\ATSSmolnogo.csproj",
+        "packagesPath": "C:\\Users\\Компьютер\\.nuget\\packages\\",
+        "outputPath": "D:\\source\\repos\\ATSSmolnogo\\ATSSmolnogo\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Компьютер\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Avalonia": {
+              "target": "Package",
+              "version": "[0.10.21, )"
+            },
+            "Avalonia.Desktop": {
+              "target": "Package",
+              "version": "[0.10.21, )"
+            },
+            "Avalonia.Diagnostics": {
+              "target": "Package",
+              "version": "[0.10.21, )"
+            },
+            "XamlNameReferenceGenerator": {
+              "target": "Package",
+              "version": "[1.6.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.107\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
